@@ -61,7 +61,7 @@ public class Finance {
 
     private String formatDetails(String item, Integer amount) {
         if (item.startsWith("Найм водія")) {
-            // Видалення деталей про автомобіль із рядка
+
             int index = item.indexOf(" - ");
             if (index > -1) {
                 item = item.substring(0, index); // Зберігаємо лише частину до " - "
@@ -76,7 +76,7 @@ public class Finance {
         } else if (item.startsWith("Підписання контракту")) {
             int index = item.indexOf('(');
             if (index > -1) {
-                item = item.substring(0, index).trim(); // Зберігаємо лише назву служби
+                item = item.substring(0, index).trim(); // Зберігаємо лише назву
             }
             return item + ": " + amount + "грн\n";
         } else {

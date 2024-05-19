@@ -9,8 +9,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Coachs {
-    private List<Coach> coaches; // Лист для зберігання автомобілів
-    private List<Coach> carsForSale; // Автомобілі доступні для купівлі
+    private List<Coach> coaches;
+    private List<Coach> carsForSale;
     private Finance finance;
 
     public Coachs(Finance finance) {
@@ -92,7 +92,7 @@ public class Coachs {
         return "Контракт не знайдено. Спробуйте ще раз.";
     }
 
-    // Метод для створення клавіатури управління автопарком
+    // Метод для створення клавіатури управління
     public ReplyKeyboardMarkup getCoachsParkKeyboard() {
         ReplyKeyboardMarkup keyboardMarkup = new ReplyKeyboardMarkup();
         List<KeyboardRow> keyboard = new ArrayList<>();

@@ -4,8 +4,8 @@ public class Specialty {
     private String specialty;
     private String rank;
     private int experience; // Досвід у роках
-    private Coach assignedCoach; // Призначений автомобіль
-    private String status; // Статус водія (Вільний/Зайнятий)
+    private Coach assignedCoach;
+    private String status;
 
     public Specialty() {
         this.status = "Вільний";

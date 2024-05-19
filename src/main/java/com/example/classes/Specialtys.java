@@ -9,8 +9,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Specialtys {
-    private List<Specialty> specialties; // Список водіїв
-    private List<Specialty> coachForHire; // Список водіїв доступних для найму
+    private List<Specialty> specialties;
+    private List<Specialty> coachForHire;
     private Finance finance;
 
     public Specialtys(Finance finance) {

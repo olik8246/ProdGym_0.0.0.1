@@ -5,7 +5,7 @@ public class Coach {
     private String lastname;
     private int yearexp;
     private int price;
-    private Specialty assignedSpecialty; // Призначений водій
+    private Specialty assignedSpecialty;
 
     public Coach() {
     }

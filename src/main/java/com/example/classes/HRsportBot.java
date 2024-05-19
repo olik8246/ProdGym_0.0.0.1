@@ -211,7 +211,7 @@ public class HRsportBot extends TelegramLongPollingBot {
         row1.add("Спеціалізації");
         row1.add("Контракти з клубами");
         KeyboardRow row2 = new KeyboardRow();
-        // row2.add("Замовлення");
+
         row2.add("Сейф");
         KeyboardRow row3 = new KeyboardRow();
         row3.add("Вийти з програми");
@@ -223,13 +223,13 @@ public class HRsportBot extends TelegramLongPollingBot {
         return keyboardMarkup;
     }
     private void restartApplication() {
-        // Скидання всіх компонентів до початкового стану
+
         this.finance = new Finance(500000); // Початковий бюджет
         this.coach = new Coach();
         this.coachs = new Coachs(finance);
         this.specialtys = new Specialtys(finance);
         this.sportServises = new SportServises(finance);
-       // this.orders = new Orders(finance);
+
         this.isRunning = true;
     }
 
