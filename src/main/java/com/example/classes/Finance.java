@@ -60,14 +60,14 @@ public class Finance {
     }
 
     private String formatDetails(String item, Integer amount) {
-        if (item.startsWith("Найм водія")) {
+        if (item.startsWith("Вибір спеціалізації")) {
 
             int index = item.indexOf(" - ");
             if (index > -1) {
                 item = item.substring(0, index); // Зберігаємо лише частину до " - "
             }
             return item + ": " + amount + "грн\n";
-        } else if (item.startsWith("Купівля автомобіля")) {
+        } else if (item.startsWith("Купівля контракту з тренером")) {
             int index = item.lastIndexOf(" - ");
             if (index > -1) {
                 item = item.substring(0, index);

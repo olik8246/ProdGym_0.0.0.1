@@ -1,5 +1,4 @@
 package com.example.classes;
-
 public class Specialty {
     private String specialty;
     private String rank;
@@ -17,7 +16,6 @@ public class Specialty {
         this.experience = experience;
         this.status = "Вільний";
     }
-
     public String getName(){
         return specialty + " " + rank;
     }
@@ -61,7 +59,6 @@ public class Specialty {
     public void setStatus(String status) {
         this.status = status;
     }
-
     @Override
     public String toString() {
         String CoachInfo = assignedCoach != null ? " - " + assignedCoach.toString() : "";
