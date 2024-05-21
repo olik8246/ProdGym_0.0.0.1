@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Coachs {
     private List<Coach> coaches;
-    private List<Coach> carsForSale;
+    private List<Coach> coachForRelease;
     private Finance finance;
 
     public Coachs(Finance finance) {
@@ -20,7 +20,7 @@ public class Coachs {
     }
 
     private void initializeCoachsForSale() {
-        carsForSale = new ArrayList<>(Arrays.asList(
+        coachForRelease = new ArrayList<>(Arrays.asList(
                 new Coach("Богдан", "Проданик", 10,18000),
                 new Coach("Олег", "Хома", 3,20000),
                 new Coach("Олександр", "Придатко", 7,28000),
@@ -46,11 +46,11 @@ public class Coachs {
         return sb.toString();
     }
 
-    public String buyCoachsByText(String carDetails, Specialtys specialtys) {
-        Iterator<Coach> iterator = carsForSale.iterator();
+    public String buyCoachsByText(String Coach, Specialtys specialtys) {
+        Iterator<Coach> iterator = coachForRelease.iterator();
         while (iterator.hasNext()) {
             Coach coach = iterator.next();
-            if (coach.toString().equals(carDetails)) {
+            if (coach.toString().equals(Coach)) {
                 int price = coach.getPrice();
                 if (finance.getBudget() < price) {
                     return "Недостатньо коштів для найму тренера.";
@@ -71,18 +71,18 @@ public class Coachs {
         return "Контракт не знайдено. Спробуйте ще раз.";
     }
 
-    public String sellCoachsByText(String carDetails) {
+    public String sellCoachsByText(String Coach) {
         Iterator<Coach> iterator = coaches.iterator();
         while (iterator.hasNext()) {
             Coach coach = iterator.next();
-            if (coach.toString().equals(carDetails)) {
+            if (coach.toString().equals(Coach)) {
                 Specialty assignedSpecialty = coach.getAssignedCoach();
                 if (assignedSpecialty != null) {
                     assignedSpecialty.setAssignedCoach(null);
                     coach.setAssignedSpecialtys(null);
                 }
                 iterator.remove();
-                carsForSale.add(coach);
+                coachForRelease.add(coach);
                 int refundAmount = (int) (coach.getPrice() * 0.75);
                 finance.addIncome(refundAmount, "Скорочення тренера: " + coach.getLastname());
                 return "Контракт " + coach.toString() + " успішно скороченно! Повернуто до бюджету: "
@@ -113,7 +113,7 @@ public class Coachs {
         ReplyKeyboardMarkup keyboardMarkup = new ReplyKeyboardMarkup();
         List<KeyboardRow> keyboard = new ArrayList<>();
 
-        for (Coach coach : carsForSale) {
+        for (Coach coach : coachForRelease) {
             KeyboardRow row = new KeyboardRow();
             row.add("Купити " + coach.toString());
             keyboard.add(row);

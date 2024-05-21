@@ -64,7 +64,7 @@ public class Finance {
 
             int index = item.indexOf(" - ");
             if (index > -1) {
-                item = item.substring(0, index); // Зберігаємо лише частину до " - "
+                item = item.substring(0, index); // Зберігаємо  до " - "
             }
             return item + ": " + amount + "грн\n";
         } else if (item.startsWith("Купівля контракту з тренером")) {
@@ -76,11 +76,10 @@ public class Finance {
         } else if (item.startsWith("Підписання контракту")) {
             int index = item.indexOf('(');
             if (index > -1) {
-                item = item.substring(0, index).trim(); // Зберігаємо лише назву
+                item = item.substring(0, index).trim(); // Зберігаємо назву
             }
             return item + ": " + amount + "грн\n";
         } else {
-            // Загальний формат для інших типів витрат
             return item + ": " + amount + "грн\n";
         }
     }
